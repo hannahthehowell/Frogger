@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+    <meta charset = "UTF-8">
+    <title>Croagunk</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts/input.js"></script>
+    <script src="scripts/random.js"></script>
+    <script src="scripts/particle-system.js"></script>
+    <script src = "scripts/gameplay.js"></script>
+
+</head>
+
+<body onclick="playGameMusic()" onclick="getControls()">
+
+
+<!--Menu Page-->
+    <div id="menu-page">
+
+        <button type="button" id="controlsOption" class="froggerButton" onclick="viewControls()">Settings</button>
+        <button type="button" id="creditsOption" class="froggerButton" onclick="viewCredits()">View Credits</button>
+
+        <button type="button" id="highScoreOption" class="froggerButton" onclick="viewHighScores()">High Scores</button>
+
+        <div style="height: 250px"></div>
+        <div id="buttonSelect">
+            <button type="button" id="start" class="froggerButton" onclick="start1()">NewGame</button>
+        </div>
+        <div style="height: 50px"></div>
+        <div id="clickForMusic">Click Anywhere to Play Music</div>
+    </div>
+
+<!--Controls Page-->
+    <div id="controls-page">
+        <button type="button" id="backToMenu0" class="froggerButton" onclick="goBackToMenu()">Menu</button>
+        <div class="header" style="margin-top: 40px;">
+            Controls
+        </div>
+        <div id="controlList" style="text-align: center;">
+            <div class="label" style="display: inline-block">Up</div>
+            <button id="upDisplay" type="button" class=froggerButton onclick="changeUp()" style="display: inline-block"></button>
+            <input id="newUpControl" class="newControl" maxlength="10" style="display:none">
+            <button id="enterNewUpControl" type="button" class="froggerButton" onclick="setUp()" style="display:none">Change</button>
+            <br>
+            <div class="label" style="display: inline-block">Right</div>
+            <button id="rightDisplay" type="button" class=froggerButton onclick="changeRight()" style="display: inline-block"></button>
+            <input id="newRightControl" class="newControl" maxlength="10" style="display:none">
+            <button id="enterNewRightControl" type="button" class="froggerButton" onclick="setRight()" style="display:none">Change</button>
+            <br>
+            <div class="label" style="display: inline-block">Down</div>
+            <button id="downDisplay" type="button" class=froggerButton onclick="changeDown()" style="display: inline-block"></button>
+            <input id="newDownControl" class="newControl" maxlength="10" style="display:none">
+            <button id="enterNewDownControl" type="button" class="froggerButton" onclick="setDown()" style="display:none">Change</button>
+            <br>
+            <div class="label" style="display: inline-block">Left</div>
+            <button id="leftDisplay" type="button" class=froggerButton onclick="changeLeft()" style="display: inline-block"></button>
+            <input id="newLeftControl" class="newControl" maxlength="10" style="display:none">
+            <button id="enterNewLeftControl" type="button" class="froggerButton" onclick="setLeft()" style="display:none">Change</button>
+            <br>
+        </div>
+    </div>
+
+<!--High Score Page-->
+    <div id="highScore-page">
+        <button type="button" id="backToMenu1" class="froggerButton" onclick="goBackToMenu()">Menu</button>
+        <div class="header" style="margin-top: 40px;">
+            High Scores
+        </div>
+        <div id="highScoreReport"></div>
+    </div>
+
+<!--Credits Page-->
+    <div id="credits-page">
+        <button type="button" id="backToMenu2" class="froggerButton" onclick="goBackToMenu()">Menu</button>
+        <div id="credits" style="margin-top: 40px;">
+            Made by Hannah Howell
+        </div>
+    </div>
+
+<!--GamePlay Page-->
+    <div id="frogger-page">
+        <button type="button" id="backToMenu3" class="froggerButton" onclick="goBackToMenu1()">Go Back to the Menu</button>
+
+        <div id="canvasBox">
+            <canvas id = "canvas-background" width = "1120" height = "1280" style = "width: 560px; height: 640px; position: absolute; z-index: 1"></canvas>
+            <canvas id = "canvas-foreground" width = "1120" height = "1280" style = "width: 560px; height: 640px; position:absolute; z-index: 2"></canvas>
+        </div>
+    </div>
+
+<!--Enter High Score Page-->
+    <div id="enterHighScore-page">
+        <div class="header" style="margin-top: 40px;">
+            New High Score!
+        </div>
+        <div id="runReport">
+            <div id="finalScore"></div>
+        </div>
+        <div class="header">
+            Please Enter Your Initials
+        </div>
+        <form style="margin: 20px">
+            <input id="initials" maxlength="3" placeholder="STV">
+            <br>
+            <input type="button" class=froggerButton onclick="addHighScore()" value="Enter">
+        </form>
+    </div>
+
+</body>
+</html>
